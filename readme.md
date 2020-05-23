@@ -236,18 +236,16 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-       
+    public function run(){
         DB::table('users')->insert([
 			[
-			'name'=>'alex',
-            'email'=>'alex@jung.de',
-            'is_admin' => '1',
-			'password'=>bcrypt('alex@jung.de'),
-            'remember_token'=> str_random(25),
-            'created_at'=> date(now()),
-            'updated_at'=>date(now())
+                'name'=>'alex',
+                'email'=>'alex@jung.de',
+                'is_admin' => '1',
+                'password'=>bcrypt('alex@jung.de'),
+                'remember_token'=> str_random(25),
+                'created_at'=> date(now()),
+                'updated_at'=>date(now())
             ],
             [
                 'name'=>'chloe',
@@ -264,5 +262,7 @@ class UsersTableSeeder extends Seeder
 }
 
 ````
+Then store these data to mysql db by execute `php artisan db:seed`.
+Finally, we are pretty much done. 
 Run the app by `php artisan serve` and type `http://localhost:8000/` to see the result.
 
