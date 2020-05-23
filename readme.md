@@ -21,4 +21,4 @@ protected $fillable = [
         'name', 'email', 'password', 'is_admin'
     ];
 ````
-    
+then do **migrate*   
