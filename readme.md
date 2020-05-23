@@ -54,9 +54,50 @@ In the routes folder, open the web file and add
 Route::get('/admin/home', 'HomeController@admin')->name('admin.home')->middleware('admin');
 ````
 
-### 3. Create route
-
 ### 4. Modify controller function
+Add the admin function at the very end of the block, it looks like as
+````php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
+    }
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function admin()
+    {
+        return view('admin');
+    }
+}
+
+````
 
 ### 5. Create blade for normal user and admin
 
