@@ -1,5 +1,5 @@
 ## Steps for creating multi authentication 
-1. Add new row "is_admin" in users table and model
+### 1. Add new row "is_admin" in users table and model
 ````php
 public function up()
     {
@@ -21,4 +21,7 @@ protected $fillable = [
         'name', 'email', 'password', 'is_admin'
     ];
 ````
-then do **migrate**
+then do **migrate**, after that do not forget to issue make:auth command for scaffolding authentication <br/>
+### 2.Create admin middleware
+Run command `code`
+
