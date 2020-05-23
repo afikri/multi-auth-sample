@@ -14,7 +14,7 @@ public function up()
             $table->timestamps();
         });
     }
-```
+````
 and in **User** model
 ````php
 protected $fillable = [
