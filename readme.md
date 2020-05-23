@@ -53,3 +53,16 @@ In the routes folder, open the web file and add
 ````php
 Route::get('/admin/home', 'HomeController@admin')->name('admin.home')->middleware('admin');
 ````
+
+### 3. Create route
+
+### 4. Modify controller function
+
+### 5. Create blade for normal user and admin
+
+### 6. Update login controller
+
+### 7. Create seeder
+
+Run the app by `php artisan serve` and type `http://localhost:8000/` to see the result.
+
