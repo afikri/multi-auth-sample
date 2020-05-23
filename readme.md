@@ -101,7 +101,7 @@ class HomeController extends Controller
 
 ### 5. Create blade for normal user and admin
 Inside the views folder, add files
-1. normal user
+1. Normal user or home.blade.php
 ````php 
 @extends('layouts.app')
 
@@ -128,7 +128,33 @@ Inside the views folder, add files
 @endsection
 
 ````
-2. admin
+2. Admin 
+````php 
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in as Administrator!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+````
 Those file are almost similar, just differ line normal user and admin  
 ### 6. Update login controller
 
