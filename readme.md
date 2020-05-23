@@ -44,7 +44,12 @@ and in the **Kernel** file add the line as below
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
-        _'admin' => \App\Http\Middleware\Admin::class,_
+        'admin' => \App\Http\Middleware\Admin::class,
 
     ];
+````
+### 3. Create route
+In the routes folder, open the web file and add
+````php
+Route::get('/admin/home', 'HomeController@admin')->name('admin.home')->middleware('admin');
 ````
