@@ -100,7 +100,36 @@ class HomeController extends Controller
 ````
 
 ### 5. Create blade for normal user and admin
+Inside the views folder, add files
+1. normal user
+````php 
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in as Normal User!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+````
+2. admin
+Those file are almost similar, just differ line normal user and admin  
 ### 6. Update login controller
 
 ### 7. Create seeder
