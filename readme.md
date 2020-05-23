@@ -23,7 +23,7 @@ protected $fillable = [
 ````
 then do **migrate**, after that do not forget to issue make:auth command for scaffolding authentication <br/>
 ### 2.Create admin middleware
-Run command `php artisan make:middleware Admin` then head to **Admin** class in the Middleware folder. Modify the __handle function__ so it looks like 
+Run command `php artisan make:middleware Admin` then head to **Admin** class in the Middleware folder. Modify the _handle function_ so it looks like 
 ````php
  public function handle($request, Closure $next)
     {
