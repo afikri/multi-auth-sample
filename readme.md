@@ -223,6 +223,46 @@ class LoginController extends Controller
 
 ````
 ### 7. Create seeder
+To create user seeder, issue `php artisan make:seeder UsersTableSeeder` command, and populate data in the **run function**
+````php
+<?php
 
+use Illuminate\Database\Seeder;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+       
+        DB::table('users')->insert([
+			[
+			'name'=>'alex',
+            'email'=>'alex@jung.de',
+            'is_admin' => '1',
+			'password'=>bcrypt('alex@jung.de'),
+            'remember_token'=> str_random(25),
+            'created_at'=> date(now()),
+            'updated_at'=>date(now())
+            ],
+            [
+                'name'=>'chloe',
+                'email'=> 'chloe@gmx.de',
+                'is_admin' => '0',
+                'password'=>bcrypt('chloe@gmx.de'),
+                'remember_token'=> str_random(25),
+                'created_at'=>date(now()),
+                'updated_at'=>date(now())
+            ]
+		
+		]);
+    }
+}
+
+````
 Run the app by `php artisan serve` and type `http://localhost:8000/` to see the result.
 
